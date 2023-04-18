@@ -1,0 +1,122 @@
+host github.com-dstillery
+  HostName github.com
+  IdentityFile ~/.ssh/github-dst
+  ForwardAgent yes
+
+host login.pipelane.net
+  IdentityFile ~/.ssh/rlanza_spark_dstillery_private_desktop
+  User rlanza
+  ForwardAgent yes
+  AddKeysToAgent yes
+  DynamicForward 9999
+  IdentitiesOnly yes
+
+#host tunnel
+#  Hostname login.pipelane.net
+#  IdentityFile ~/.ssh/rlanza_spark_dstillery_private_desktop
+#  User rlanza
+#  DynamicForward 9999
+host *
+  ForwardX11 no
+  TCPKeepAlive yes
+Host pf57
+  Hostname pf57.sd.pl.pvt
+  User root
+  Forwardagent yes
+#  ProxyJump dstillery
+host *.pvt
+  User rlanza
+  IdentityFile ~/.ssh/rlanza_spark_dstillery_private_desktop
+#  ProxyJump dstillery
+#host *.pvt
+# HostName asd633.sd.pl.pvt
+#  HostName *.pl.pvt
+#  HostName %h.sd.pl.pvt
+#   HostName %h
+#  User root
+# IdentityFile ~/.ssh/rlanza_spark_dstillery_private_desktop
+# ForwardAgent yes
+#  ProxyCommand ssh pf57 -W %h:%p
+#  ProxyCommand ssh -W %h:%p pf57
+#  ProxyJump dstillery
+#Host flex_test
+#  Hostname 10.170.76.108
+#  Forwardagent yes
+#  ProxyJump dstillery
+#
+#Ansible hosts
+Host lb00.pipelane.net
+  Hostname 10.70.69.25
+  user root
+  IdentityFile ~/.ssh/awx
+
+Host lb01.pipelane.net
+  Hostname 10.70.69.26
+  user root
+  IdentityFile ~/.ssh/awx
+
+Host gshr03.eq.pl.pvt
+  Hostname 10.70.76.165
+  User root
+  IdentityFile ~/.ssh/awx
+
+Host gshr02.eq.pl.pvt
+  Hostname 10.70.76.174
+  User root
+  IdentityFile ~/.ssh/awx
+
+Host keq705.hadoop.pvt
+  Hostname 10.70.87.205
+  User root
+  IdentityFile ~/.ssh/awx
+
+Host keq706.hadoop.pvt
+  Hostname 10.70.87.206
+  User root
+  IdentityFile ~/.ssh/awx
+
+Host jupyterhub.dstillery.com
+  Hostname 10.20.0.2
+  User sre
+  IdentityFile ~/.ssh/awx
+
+Host jupyterhub02.dstillery.com
+  Hostname 10.20.0.4
+  User sre
+  IdentityFile ~/.ssh/awx
+
+Host etl00.stg
+  Hostname 10.32.0.10
+  User sre
+  IdentityFile ~/.ssh/awx
+
+Host etl00.prod
+  Hostname 10.37.0.4
+  User sre
+  IdentityFile ~/.ssh/awx
+
+
+Host lp00.ds.rs.dst
+  Hostname 10.20.0.2
+  User sre
+  IdentityFile ~/.ssh/awx
+
+Host lp01.ds.rs.dst
+  Hostname 10.20.1.2
+  User sre
+  IdentityFile ~/.ssh/awx
+
+Host lp02.ds.rs.dst
+  Hostname 10.20.0.4
+  User sre
+  IdentityFile ~/.ssh/awx
+Host lp03.ds.rs.dst
+  Hostname 10.20.0.6
+  User sre
+  IdentityFile ~/.ssh/awx
+
+Host lab01
+ Hostname 172.18.80.1
+ Port 2201
+ User vagrant
+ IdentityFile ~/.ssh/awx
